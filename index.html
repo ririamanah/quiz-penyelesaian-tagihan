@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Studi Kasus Perencanaan Belanja</title>
+<style>
+  /* Mengatur tampilan dasar halaman */
+  body {
+    margin: 0;
+    padding: 20px;
+    background-color: transparent;
+    font-family: Arial, sans-serif;
+    color: #333;
+  }
+
+  .custom-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 0 auto;
+    max-width: 900px; /* Diperlebar sedikit untuk tabel */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  }
+
+  /* JUDUL DAN TEKS */
+  .case-study-content {
+    text-align: left;
+    margin-bottom: 25px;
+    line-height: 1.6;
+  }
+  .case-study-content h2 {
+    color: #001655;
+    font-size: 22px;
+    margin-top: 0;
+    text-align: center;
+  }
+  .case-study-content h4 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #001965;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 5px;
+  }
+
+  /* STYLE UNTUK TABEL */
+  .table-wrapper {
+    overflow-x: auto; /* Agar bisa discroll horizontal jika layar kecil */
+    margin-bottom: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+  }
+  .custom-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px; /* Font tabel sedikit lebih kecil agar muat */
+  }
+  .custom-table th, .custom-table td {
+    border: 1px solid #c8dbe6;
+    padding: 8px 10px;
+    text-align: left;
+    vertical-align: top;
+  }
+  .custom-table th {
+    background-color: #f0f8ff;
+    color: #001655;
+    font-weight: bold;
+    white-space: nowrap; /* Judul kolom tidak turun baris */
+  }
+  /* Mengatur lebar kolom No */
+  .custom-table th:first-child, .custom-table td:first-child {
+    width: 30px;
+    text-align: center;
+  }
+  .bg-highlight {
+    background-color: #fff9c4; /* Warna kuning stabilo untuk jawaban penting */
+  }
+
+  /* AREA INPUT JAWABAN */
+  .input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top: 2px solid #eee;
+    padding-top: 20px;
+  }
+  .custom-textbox {
+    width: 100%;
+    background-color: #e2f0fa;
+    color: #001965;
+    border: 1px solid #c8dbe6;
+    padding: 15px;
+    font-size: 16px;
+    line-height: 1.5;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  .custom-submit-button {
+    background-color: #001965;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  .custom-submit-button:hover {
+    background-color: #003366;
+  }
+  .custom-submit-button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+  .message {
+    margin-top: 15px;
+    font-weight: bold;
+    min-height: 20px;
+  }
+
+  /* AREA KUNCI JAWABAN */
+  .suggested-answer {
+    text-align: left;
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #fff; /* Putih agar tabel terlihat jelas */
+    border: 2px solid #001655; /* Border tebal penanda kunci jawaban */
+    border-radius: 5px;
+  }
+  .suggested-answer h3 {
+    color: #001655;
+    margin-top: 0;
+    text-align: center;
+    background-color: #e2f0fa;
+    padding: 10px;
+    border-radius: 5px;
+  }
+</style>
+</head>
+<body>
+
+<div class="custom-container">
+  
+  <div class="case-study-content">
+    <h2>Studi Kasus: Perencanaan Pengadaan Laptop</h2>
+    
+    <p><strong>Skenario:</strong><br>
+    Satuan Kerja Pusdiklat ABC membutuhkan laptop untuk kebutuhan Widyaiswara. Saat ini (Tahun 2025) tersedia 25 unit laptop kondisi baik. Karena ada penambahan 3 Widyaiswara baru, dibutuhkan tambahan 3 unit laptop lagi.</p>
+    
+    <p><strong>Tugas Anda:</strong><br>
+    Lakukan identifikasi kebutuhan untuk Tahun Anggaran 2026 dengan mengacu pada formulir di bawah ini. Perhatikan data berikut:
+    <ul>
+        <li>Spesifikasi: Prosesor min. Core i5, RAM 16GB, SSD min. 500GB.</li>
+        <li>Anggaran: Program Dukungan Manajerial, KRO Layanan Sarana Internal.</li>
+    </ul>
+    </p>
+
+    <h4>Formulir Identifikasi Kebutuhan (Format Acuan)</h4>
+    <div class="table-wrapper">
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>Pertanyaan</th>
+            <th>Jawaban</th>
+            <th>Keterangan</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>A</td><td colspan="3"><strong>Identifikasi Kebutuhan</strong></td></tr>
+          <tr><td>1</td><td>Nama/Jenis Barang</td><td></td><td></td></tr>
+          <tr><td>2</td><td>Fungsi/Kegunaan</td><td></td><td></td></tr>
+          <tr><td>3</td><td>Ukuran/Kapasitas</td><td></td><td></td></tr>
+          <tr><td>4</td><td>Jumlah Barang yang dibutuhkan</td><td></td><td></td></tr>
+          <tr><td>5</td><td>Waktu pemanfaatan barang</td><td></td><td></td></tr>
+          <tr><td>6</td><td>Pihak yang mengelola barang</td><td></td><td></td></tr>
+          <tr><td>7</td><td>Total perkiraan waktu pengadaan</td><td></td><td></td></tr>
+          <tr><td>8</td><td>Terdapat di e-katalog LKPP</td><td>Ya/Tidak</td><td></td></tr>
+          <tr><td>9</td><td>Tingkat prioritas kebutuhan</td><td>Tinggi/Sedang/Kecil</td><td></td></tr>
+          <tr><td>10</td><td>Perkiraan Biaya</td><td></td><td></td></tr>
+          <tr><td>B</td><td colspan="3"><strong>Menunjang Tusi Organisasi</strong></td></tr>
+          <tr><td>11</td><td>Jumlah pegawai dalam unit kerja</td><td></td><td></td></tr>
+          <tr><td>12</td><td>Tingkat beban tugas</td><td>Tinggi/Sedang/Rendah</td><td></td></tr>
+          <tr><td>C</td><td colspan="3"><strong>Barang yang Telah Tersedia</strong></td></tr>
+          <tr><td>14</td><td>Jumlah barang sejenis yang tersedia</td><td></td><td></td></tr>
+          <tr><td>15</td><td>Kondisi kelayakan Barang</td><td></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><em>*Tabel di atas adalah format yang harus Anda analisis isiannya.</em></p>
+  </div>
+
+  <div class="input-container">
+    <textarea id="myTextArea" class="custom-textbox" placeholder="Ketik hasil analisis dan poin-poin jawaban Anda di sini..." rows="5"></textarea>
+    <button id="submitBtn" class="custom-submit-button">Submit Jawaban</button>
+    <p id="submissionMessage" class="message"></p>
+  </div>
+
+  <div id="suggestedAnswer" class="suggested-answer" style="display: none;">
+    <h3>Kunci Jawaban & Pembahasan</h3>
+    
+    <h4>1. Hasil Identifikasi Kebutuhan</h4>
+    <div class="table-wrapper">
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>Pertanyaan</th>
+            <th>Jawaban (Isian PPK)</th>
+            <th>Keterangan</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>A</td><td colspan="3"><strong>Identifikasi Kebutuhan</strong></td></tr>
+          <tr><td>1</td><td>Nama/Jenis Barang</td><td class="bg-highlight">Laptop</td><td></td></tr>
+          <tr><td>2</td><td>Fungsi/Kegunaan</td><td>Operasional Widyaiswara</td><td></td></tr>
+          <tr><td>3</td><td>Ukuran/Kapasitas</td><td>Min. Core i5, RAM 16GB, SSD 500GB</td><td></td></tr>
+          <tr><td>4</td><td>Jumlah Barang</td><td class="bg-highlight">3 Unit</td><td>Sesuai penambahan pegawai</td></tr>
+          <tr><td>5</td><td>Waktu Pemanfaatan</td><td>Januari 2026</td><td></td></tr>
+          <tr><td>6</td><td>Pihak Pengelola</td><td>Pusdiklat ABC</td><td></td></tr>
+          <tr><td>10</td><td>Perkiraan Biaya</td><td>Rp 75.000.000</td><td>Estimasi + Inflasi</td></tr>
+          <tr><td>C</td><td colspan="3"><strong>Barang yang Telah Tersedia</strong></td></tr>
+          <tr><td>14</td><td>Jumlah barang tersedia</td><td>25 Unit</td><td>Perlu tambah 3 unit</td></tr>
+          <tr><td>15</td><td>Kondisi kelayakan</td><td>Baik</td><td></td></tr>
+          <tr><td>D</td><td colspan="3"><strong>Identifikasi Pasokan & Kriteria</strong></td></tr>
+          <tr><td>18</td><td>Kriteria Barang</td><td>Produk Dalam Negeri & Pabrikan</td><td>Wajib PDN</td></tr>
+          <tr><td>19</td><td>Nilai TKDN</td><td>Ya, Minimal TKDN+BMP 40%</td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>2. Penetapan Kodefikasi Barang (KBKI)</h4>
+    <p>Pengadaan ini termasuk <strong>Pengadaan Barang</strong> dengan kodefikasi:</p>
+    <div class="table-wrapper">
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th style="width: 20%;">Tingkatan</th>
+            <th>Kode</th>
+            <th>Uraian</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Seksi</td><td>4</td><td>Produk logam, mesin dan perlengkapannya</td></tr>
+          <tr><td>Divisi</td><td>45</td><td>Mesin perkantoran, akunting dan komputasi</td></tr>
+          <tr><td>Kelompok</td><td>452</td><td>Mesin komputasi dan bagian serta perlengkapannya</td></tr>
+          <tr><td>Kelas</td><td>4522</td><td>Mesin pengolah data otomatis portabel (< 10kg)</td></tr>
+          <tr><td>Subkelas</td><td>45221</td><td class="bg-highlight">Mesin pengolah data otomatis portabel seperti Laptop & Notebook</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const submitBtn = document.getElementById('submitBtn');
+  const textArea = document.getElementById('myTextArea');
+  const submissionMessage = document.getElementById('submissionMessage');
+  const suggestedAnswer = document.getElementById('suggestedAnswer');
+
+  submitBtn.addEventListener('click', function() {
+    if (textArea.value.trim() !== '') {
+      submissionMessage.innerText = 'Jawaban terkirim! Silakan pelajari tabel kunci jawaban di bawah.';
+      submissionMessage.style.color = '#001655';
+      submitBtn.disabled = true;
+      submitBtn.innerText = "Terkirim";
+      textArea.disabled = true;
+      
+      suggestedAnswer.style.display = 'block';
+      suggestedAnswer.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      submissionMessage.innerText = 'Mohon ketik jawaban Anda sebelum mengirim.';
+      submissionMessage.style.color = '#d32f2f'; 
+    }
+  });
+});
+</script>
+
+</body>
+</html>
