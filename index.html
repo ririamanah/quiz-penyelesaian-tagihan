@@ -3,48 +3,47 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Latihan Soal Perencanaan PBJP Level 2</title>
+<title>Studi Kasus Perencanaan PBJP</title>
 <style>
-  /* --- GAYA TAMPILAN (CSS) --- */
+  /* GAYA TAMPILAN (Kemenkeu Style - Clean Professional) */
   body {
     margin: 0;
     padding: 20px;
-    background-color: transparent;
+    background-color: transparent; /* Transparan agar menyatu dengan slide */
     font-family: 'Segoe UI', Arial, sans-serif;
-    color: #2c3e50;
+    color: #333;
     font-size: 14px;
   }
 
   .container {
-    background-color: white;
-    padding: 30px;
+    background-color: #ffffff;
+    padding: 25px;
     border-radius: 8px;
     margin: 0 auto;
-    max-width: 950px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    max-width: 100%;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    border-top: 5px solid #001655; /* Warna Kemenkeu Blue */
   }
 
-  /* Header & Judul */
-  h1, h2, h3 { color: #001655; margin-top: 0; }
-  h2 { font-size: 20px; border-bottom: 2px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
-  h3 { font-size: 16px; margin-top: 20px; margin-bottom: 10px; background-color: #f8f9fa; padding: 8px; border-left: 4px solid #001655; }
+  h2 { color: #001655; margin-top: 0; border-bottom: 1px solid #ccc; padding-bottom: 10px; }
+  h3 { color: #001655; margin-top: 25px; font-size: 16px; background: #f4f4f4; padding: 8px; border-left: 4px solid #cfa72f; /* Aksen Emas/Kuning */ }
   
-  p, li { line-height: 1.6; margin-bottom: 10px; }
+  p, li { line-height: 1.5; margin-bottom: 10px; }
 
-  /* Kotak Skenario */
+  /* KOTAK SKENARIO */
   .scenario-box {
     background-color: #eef2f5;
     padding: 15px;
+    border: 1px solid #d1d9e6;
     border-radius: 5px;
-    border: 1px solid #dce4ec;
     margin-bottom: 20px;
   }
 
-  /* GAYA TABEL (Agar sama persis dengan dokumen) */
-  .table-responsive {
+  /* STYLE TABEL (Mirip Word) */
+  .table-wrapper {
     overflow-x: auto;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
+    margin-bottom: 15px;
+    border: 1px solid #000;
   }
   
   table {
@@ -54,269 +53,202 @@
   }
 
   th, td {
-    border: 1px solid #000; /* Border hitam tegas seperti dokumen Word */
-    padding: 6px 8px;
+    border: 1px solid #000;
+    padding: 5px 8px;
     vertical-align: top;
   }
 
   th {
-    background-color: #dbe5f1; /* Warna biru muda khas header tabel Word */
+    background-color: #dbe5f1; /* Warna header tabel standar Word */
     text-align: center;
     font-weight: bold;
+    color: #000;
   }
 
-  /* Kolom Nomor sempit */
-  td:first-child { text-align: center; width: 30px; }
+  .section-header { background-color: #f2f2f2; font-weight: bold; }
+  .center-text { text-align: center; }
   
-  /* Baris Judul Bagian (A, B, C...) */
-  .section-row {
-    background-color: #f2f2f2;
-    font-weight: bold;
-  }
+  /* Highlight Jawaban */
+  .ans-bg { background-color: #fff2cc; font-weight: bold; } /* Kuning muda untuk jawaban */
 
-  /* Highlight Jawaban di Tabel Kunci */
-  .ans-highlight {
-    background-color: #ffffcc; /* Kuning stabilo untuk isian jawaban */
-    font-weight: bold;
-  }
-
-  /* INPUT & TOMBOL */
+  /* INTERAKSI */
   textarea {
     width: 100%;
-    padding: 15px;
+    padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 4px;
     font-family: inherit;
-    font-size: 14px;
-    background-color: #fafafa;
     resize: vertical;
+    box-sizing: border-box;
+    margin-bottom: 10px;
   }
 
   .btn-submit {
     background-color: #001655;
     color: white;
     border: none;
-    padding: 12px 30px;
-    font-size: 16px;
-    border-radius: 5px;
+    padding: 12px 25px;
+    font-size: 15px;
+    border-radius: 4px;
     cursor: pointer;
-    margin-top: 15px;
-    transition: background-color 0.2s;
+    font-weight: bold;
   }
   .btn-submit:hover { background-color: #002a80; }
-  .btn-submit:disabled { background-color: #95a5a6; cursor: default; }
+  .btn-submit:disabled { background-color: #888; cursor: not-allowed; }
 
-  #feedbackMsg { font-weight: bold; margin-top: 10px; display: none; }
-
-  /* KUNCI JAWABAN (Hidden by default) */
-  #answerKey {
-    display: none;
-    margin-top: 40px;
-    border-top: 3px dashed #bbb;
-    padding-top: 20px;
-  }
+  #feedback-area { display: none; margin-top: 30px; border-top: 2px dashed #999; padding-top: 20px; animation: fadeIn 1s; }
+  
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 </style>
 </head>
 <body>
 
 <div class="container">
   
-  <h2>LATIHAN SOAL: MELAKUKAN PERENCANAAN PBJP LEVEL 2</h2>
-
+  <h2>LATIHAN SOAL: PERENCANAAN PBJP LEVEL 2</h2>
+  
   <div class="scenario-box">
-    <strong>Soal Studi Kasus</strong><br>
-    <p><strong>Indikator Kompetensi:</strong> Mampu melakukan pekerjaan Identifikasi/ Reviu Kebutuhan dan Penetapan Barang/Jasa.</p>
+    <p><strong>Soal Studi Kasus</strong><br>
+    Indikator Kompetensi: Mampu melakukan pekerjaan Identifikasi/ Reviu Kebutuhan dan Penetapan Barang/Jasa.</p>
+    
     <p>Satuan Kerja Pusdiklat ABC membutuhkan laptop untuk kebutuhan Widyaiswara. Data BMN Laptop Satker Pusdiklat ABC tahun 2025 laptop berjumlah 25 unit dalam kondisi baik. Terdapat penambahan jumlah Widyaiswara 3 orang, sehingga membutuhkan 3 unit laptop lagi.</p>
+    
     <p>Berdasarkan kondisi diatas, identifikasikan kebutuhan Laptop satuan kerja Pusdiklat ABC untuk tahun 2026 dengan mengisi formulir pertanyaan identifikasi kebutuhan. Standar spesifikasi Laptopnya adalah Prosesornya minimal Pentium i5, RAM 16GB, Hardisk SSD minimal 500GB. Pengadaan laptop termasuk dalam Program Dukungan Mangerial, KRO Layanan Sarana Internal, dan RO Layanan Pengadaan Alat Pengolah Data.</p>
-    <p>
-      <strong>Data Isian Formulir:</strong><br>
-      K/L/PD: Kementerian XYZ<br>
-      Satuan Kerja: Pusdiklat ABC<br>
-      Jenis kebutuhan: Barang
-    </p>
+
+    <ul style="list-style-type: none; padding-left: 0; font-size: 13px; font-weight: bold; color: #555;">
+      <li>K/L/PD : Kementerian XYZ</li>
+      <li>Satuan Kerja : Pusdiklat ABC</li>
+      <li>Jenis kebutuhan : Barang</li>
+    </ul>
   </div>
 
-  <h3>Soal 1: Identifikasi Kebutuhan</h3>
-  <p>Lengkapi tabel <strong>Formulir Pertanyaan Identifikasi Kebutuhan</strong> di bawah ini berdasarkan skenario:</p>
+  <p><strong>Instruksi:</strong> Berdasarkan studi kasus di atas, lakukan analisis untuk:</p>
+  <ol>
+    <li>Pengisian Formulir Identifikasi Kebutuhan (Tabel A-F).</li>
+    <li>Reviu terhadap identifikasi kebutuhan (Spesifikasi, Harga, Merek).</li>
+    <li>Penetapan Barang/Jasa berdasarkan KBKI.</li>
+  </ol>
   
-  <div class="table-responsive">
-    <table>
-      <thead>
-        <tr>
-          <th>No</th>
-          <th>Pertanyaan</th>
-          <th>Jawaban</th>
-          <th>Keterangan</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr class="section-row"><td>A</td><td>Identifikasi Kebutuhan</td><td></td><td></td></tr>
-        <tr><td>1</td><td>Nama/Jenis Barang</td><td></td><td></td></tr>
-        <tr><td>2</td><td>Fungsi/Kegunaan</td><td></td><td></td></tr>
-        <tr><td>3</td><td>Ukuran/Kapasitas</td><td></td><td></td></tr>
-        <tr><td>4</td><td>Jumlah Barang yang dibutuhkan</td><td></td><td></td></tr>
-        <tr><td>5</td><td>Waktu pemanfaatan barang</td><td></td><td></td></tr>
-        <tr><td>6</td><td>Pihak yang akan menggunakan/ mengelola barang</td><td></td><td></td></tr>
-        <tr><td>7</td><td>Total perkiraan waktu pengadaan barang</td><td></td><td></td></tr>
-        <tr><td>8</td><td>Terdapat di e-katalog LKPP</td><td>Ya/tidak</td><td></td></tr>
-        <tr><td>9</td><td>Tingkat prioritas kebutuhan barang</td><td>Tinggi/sedang/kecil</td><td></td></tr>
-        <tr><td>10</td><td>Perkiraan Biaya</td><td></td><td></td></tr>
-        
-        <tr class="section-row"><td>B</td><td>Dalam rangka menunjang tugas dan fungsi organisasi</td><td></td><td></td></tr>
-        <tr><td>11</td><td>Jumlah pegawai dalam unit Kerja</td><td></td><td></td></tr>
-        <tr><td>12</td><td>Tingkat beban tugas dan tanggungjawab pegawai</td><td>Tinggi/sedang/rendah</td><td></td></tr>
-        <tr><td>13</td><td>Jumlah barang yang telah tersedia/dimiliki dapat memenuhi kebutuhan</td><td>Ya/Tidak</td><td></td></tr>
-
-        <tr class="section-row"><td>C</td><td>Identifikasi Barang yang telah tersedia/dimiliki/dikuasai</td><td></td><td></td></tr>
-        <tr><td>14</td><td>Jumlah barang sejenis yang telah tersedia</td><td></td><td></td></tr>
-        <tr><td>15</td><td>Kondisi kelayakan Barang</td><td></td><td></td></tr>
-
-        <tr class="section-row"><td>D</td><td>Identifikasi pasokan (supply) Barang</td><td></td><td></td></tr>
-        <tr><td>16</td><td>Kemudahan memperoleh Barang di pasaran Indonesia</td><td>Ya/Tidak</td><td></td></tr>
-        <tr><td>17</td><td>Terdapat produsen/pelaku usaha yang dinilai mampu</td><td>Banyak/Terbatas</td><td></td></tr>
-        <tr><td>18</td><td>Kriteria Barang</td><td>Produk dalam negeri / Impor / Pabrikan</td><td></td></tr>
-        <tr><td>19</td><td>Persyaratan Barang memiliki nilai TKDN tertentu</td><td>Ya/Tidak</td><td></td></tr>
-        <tr><td>20</td><td>Dukungan terhadap Pengadaan Berkelanjutan (Ekonomi/Sosial/Lingkungan)</td><td>Ya/Tidak</td><td></td></tr>
-
-        <tr class="section-row"><td>E</td><td>Persyaratan lain yang diperlukan</td><td></td><td></td></tr>
-        <tr><td>21</td><td>Cara pengiriman</td><td></td><td></td></tr>
-
-        <tr class="section-row"><td>F</td><td>Konsolidasi pengadaan Barang</td><td></td><td></td></tr>
-        <tr><td>22</td><td>Terdapat pengadaan Barang sejenis pada kegiatan lain</td><td>Ya/tidak</td><td></td></tr>
-        <tr><td>23</td><td>Indikasi konsolidasi atas pengadaan Barang</td><td>Direkomendasikan/ Tidak</td><td></td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <h3>Soal 2: Reviu Kebutuhan</h3>
-  <p>Berdasarkan informasi tersebut, Saudara sebagai seorang PPK diminta untuk lakukan <strong>review terhadap identifikasi kebutuhan tahun 2026</strong>.</p>
-
-  <h3>Soal 3: Penetapan Barang/Jasa (KBKI)</h3>
-  <p>Berdasarkan identifikasi kebutuhan laptop tersebut, lakukan penetapan barang/jasa pengadaan tersebut berdasarkan <strong>Klasifikasi Baku Komoditas Indonesia (KBKI)</strong> yang dikeluarkan oleh Badan Pusat Statistik (BPS).</p>
+  <p><em>Silakan ketik poin-poin analisis Anda pada kolom di bawah ini, lalu klik Submit untuk melihat Kunci Jawaban lengkap.</em></p>
   
-  <hr>
+  <textarea id="userAnswer" rows="5" placeholder="Ketik jawaban analisis Anda di sini..."></textarea>
+  <button id="submitBtn" class="btn-submit" onclick="showAnswer()">Submit Jawaban</button>
 
-  <p><strong>Jawaban Anda:</strong></p>
-  <textarea id="userAnswer" rows="6" placeholder="Silakan ketik analisis dan jawaban Anda untuk ketiga soal di atas di sini..."></textarea>
-  
-  <button id="submitBtn" class="btn-submit">Submit Jawaban</button>
-  <p id="feedbackMsg"></p>
+  <div id="feedback-area">
+    <h2 style="color: #cfa72f; border-bottom: 2px solid #001655;">KUNCI JAWABAN & PEMBAHASAN</h2>
 
-  <div id="answerKey">
-    <h2 style="color: #d35400;">KUNCI JAWABAN & PEMBAHASAN</h2>
-
-    <h3>Kunci Jawaban 1: Formulir Identifikasi Kebutuhan</h3>
-    <div class="table-responsive">
+    <h3>1. Formulir Pertanyaan Identifikasi Kebutuhan</h3>
+    <div class="table-wrapper">
       <table>
         <thead>
           <tr>
-            <th>No</th>
+            <th style="width: 30px;">No</th>
             <th>Pertanyaan</th>
             <th>Jawaban</th>
             <th>Keterangan</th>
           </tr>
         </thead>
         <tbody>
-          <tr class="section-row"><td>A</td><td>Identifikasi Kebutuhan</td><td></td><td></td></tr>
-          <tr><td>1</td><td>Nama/Jenis Barang</td><td class="ans-highlight">Laptop</td><td></td></tr>
-          <tr><td>2</td><td>Fungsi/Kegunaan</td><td class="ans-highlight">Operasional Widyaiswara</td><td></td></tr>
-          <tr><td>3</td><td>Ukuran/Kapasitas</td><td class="ans-highlight">Prosesor min. Pentium i5, RAM 16GB, SSD min. 500GB</td><td></td></tr>
-          <tr><td>4</td><td>Jumlah Barang yang dibutuhkan</td><td class="ans-highlight">3 unit</td><td></td></tr>
-          <tr><td>5</td><td>Waktu pemanfaatan barang</td><td class="ans-highlight">Januari 2026</td><td></td></tr>
-          <tr><td>6</td><td>Pihak yang akan menggunakan</td><td class="ans-highlight">Pusdiklat ABC</td><td></td></tr>
-          <tr><td>7</td><td>Total perkiraan waktu pengadaan</td><td class="ans-highlight">30 hari kalender</td><td></td></tr>
-          <tr><td>8</td><td>Terdapat di e-katalog LKPP</td><td>Ya</td><td></td></tr>
-          <tr><td>9</td><td>Tingkat prioritas kebutuhan</td><td>Tinggi</td><td></td></tr>
-          <tr><td>10</td><td>Perkiraan Biaya</td><td class="ans-highlight">Rp.75.000.000</td><td></td></tr>
+          <tr class="section-header"><td class="center-text">A</td><td>Identifikasi Kebutuhan</td><td></td><td></td></tr>
+          <tr><td class="center-text">1</td><td>Nama/Jenis Barang</td><td class="ans-bg">Laptop</td><td></td></tr>
+          <tr><td class="center-text">2</td><td>Fungsi/Kegunaan</td><td class="ans-bg">Operasional Widyaiswara</td><td></td></tr>
+          <tr><td class="center-text">3</td><td>Ukuran/Kapasitas</td><td class="ans-bg">Prosesor minimal Pentium i5, RAM 16GB, Hardisk SSD minimal 500GB</td><td></td></tr>
+          <tr><td class="center-text">4</td><td>Jumlah Barang yang dibutuhkan</td><td class="ans-bg">3 unit</td><td></td></tr>
+          <tr><td class="center-text">5</td><td>Waktu pemanfaatan barang</td><td class="ans-bg">Januari 2026</td><td></td></tr>
+          <tr><td class="center-text">6</td><td>Pihak yang akan menggunakan/ mengelola barang</td><td class="ans-bg">Pusdiklat ABC</td><td></td></tr>
+          <tr><td class="center-text">7</td><td>Total perkiraan waktu pengadaan barang</td><td class="ans-bg">30 hari kalender</td><td></td></tr>
+          <tr><td class="center-text">8</td><td>Terdapat di e-katalog LKPP</td><td>Ya/tidak</td><td></td></tr>
+          <tr><td class="center-text">9</td><td>Tingkat prioritas kebutuhan barang</td><td>Tinggi/sedang/kecil</td><td></td></tr>
+          <tr><td class="center-text">10</td><td>Perkiraan Biaya</td><td class="ans-bg">Rp.75.000.000</td><td></td></tr>
           
-          <tr class="section-row"><td>B</td><td>Menunjang Tusi Organisasi</td><td></td><td></td></tr>
-          <tr><td>11</td><td>Jumlah pegawai dalam unit Kerja</td><td class="ans-highlight">28 orang Widyaiswara</td><td>(25 lama + 3 baru)</td></tr>
-          <tr><td>13</td><td>Barang yang ada dapat memenuhi kebutuhan</td><td>Tidak</td><td></td></tr>
+          <tr class="section-header"><td class="center-text">B</td><td>Dalam rangka menunjang tugas dan fungsi organisasi</td><td></td><td></td></tr>
+          <tr><td class="center-text">11</td><td>Jumlah pegawai dalam unit Kerja</td><td class="ans-bg">28 orang Widyaiwara</td><td></td></tr>
+          <tr><td class="center-text">12</td><td>Tingkat beban tugas dan tanggungjawab pegawai</td><td>Tinggi/sedang/rendah</td><td></td></tr>
+          <tr><td class="center-text">13</td><td>Jumlah barang yang telah tersedia/dimiliki dapat memenuhi kebutuhan</td><td>Ya/Tidak</td><td></td></tr>
 
-          <tr class="section-row"><td>C</td><td>Barang yang Telah Tersedia</td><td></td><td></td></tr>
-          <tr><td>14</td><td>Jumlah barang sejenis tersedia</td><td class="ans-highlight">25 unit</td><td>Perlu penambahan 3 unit Laptop</td></tr>
-          <tr><td>15</td><td>Kondisi kelayakan Barang</td><td>Baik</td><td></td></tr>
+          <tr class="section-header"><td class="center-text">C</td><td>Identifikasi Barang yang telah tersedia/dimiliki/dikuasai</td><td></td><td></td></tr>
+          <tr><td class="center-text">14</td><td>Jumlah barang sejenis yang telah tersedia</td><td class="ans-bg">25 unit</td><td>Perlu penambahan 3 unit Laptop</td></tr>
+          <tr><td class="center-text">15</td><td>Kondisi kelayakan Barang</td><td class="ans-bg">Baik</td><td></td></tr>
 
-          <tr class="section-row"><td>D</td><td>Identifikasi Pasokan</td><td></td><td></td></tr>
-          <tr><td>18</td><td>Kriteria Barang</td><td class="ans-highlight">Produk dalam negeri & Pabrikan</td><td></td></tr>
-          <tr><td>19</td><td>Nilai TKDN</td><td class="ans-highlight">Ya (Min. TKDN + BMP 40%)</td><td></td></tr>
-          
-          <tr class="section-row"><td>E</td><td>Persyaratan Lain</td><td></td><td></td></tr>
-          <tr><td>21</td><td>Cara pengiriman</td><td class="ans-highlight">Dikirim langsung ke Pusdiklat ABC</td><td></td></tr>
+          <tr class="section-header"><td class="center-text">D</td><td>Identifikasi pasokan (supply) Barang</td><td></td><td></td></tr>
+          <tr><td class="center-text">16</td><td>Kemudahan memperoleh Barang di pasaran Indonesia</td><td>Ya/Tidak</td><td></td></tr>
+          <tr><td class="center-text">17</td><td>Terdapat produsen/pelaku usaha yang dinilai mampu</td><td>Banyak/Terbatas</td><td></td></tr>
+          <tr><td class="center-text">18</td><td>Kriteria Barang</td><td class="ans-bg">Produk dalam negeri & Pabrikan</td><td>(Checklist)</td></tr>
+          <tr><td class="center-text">19</td><td>Persyaratan Barang memiliki nilai TKDN tertentu</td><td class="ans-bg">Ya (Minimal TKDN + BMP minimal 40 %)</td><td></td></tr>
+          <tr><td class="center-text">20</td><td>Dukungan terhadap Pengadaan Berkelanjutan</td><td>Ya/Tidak</td><td></td></tr>
 
-          <tr class="section-row"><td>F</td><td>Konsolidasi</td><td></td><td></td></tr>
-          <tr><td>22</td><td>Pengadaan sejenis di kegiatan lain</td><td>Tidak</td><td></td></tr>
+          <tr class="section-header"><td class="center-text">E</td><td>Persyaratan lain yang diperlukan</td><td></td><td></td></tr>
+          <tr><td class="center-text">21</td><td>Cara pengiriman</td><td class="ans-bg">Dikirim langsung ke Pusdiklat ABC di Bogor</td><td></td></tr>
+
+          <tr class="section-header"><td class="center-text">F</td><td>Konsolidasi pengadaan Barang</td><td></td><td></td></tr>
+          <tr><td class="center-text">22</td><td>Terdapat pengadaan Barang sejenis pada kegiatan lain</td><td>Ya/tidak</td><td></td></tr>
+          <tr><td class="center-text">23</td><td>Indikasi konsolidasi atas pengadaan Barang</td><td>Direkomendasikan/ Tidak</td><td></td></tr>
         </tbody>
       </table>
     </div>
 
-    <h3>Kunci Jawaban 2: Reviu Kebutuhan</h3>
+    <h3>2. Reviu Identifikasi Kebutuhan</h3>
     <ul>
-      <li><strong>Spesifikasi:</strong> Disesuaikan dengan kebutuhan terkini yaitu Prosesor minimal Pentium i5, RAM 16GB, Hardisk SSD minimal 500GB.</li>
-      <li><strong>Harga/Dana:</strong> Perkiraan kebutuhan dana menggunakan data dalam e-katalog LKPP kondisi saat perencanaan, sehingga untuk mendapatkan harga terbaru perlu ditambahkan <strong>nilai inflasi</strong>.</li>
-      <li><strong>Merek:</strong> Direkomendasikan menggunakan merek laptop yang sama dengan tahun 2025 (Standardisasi).</li>
+      <li><strong>Spesifikasi:</strong> Disesuaikan dengan kebutuhan terkini yaitu Prosesornya minimal Pentium i5, RAM 16GB, Hardisk SSD minimal 500GB.</li>
+      <li><strong>Harga:</strong> Perkiraan kebutuhan dana menggunakan data dalam e-katalog LKPP kondisi saat perencanaan sehingga mendapatkan harga terbaru perlu ditambahkan <strong>nilai inflasi</strong>.</li>
+      <li><strong>Merek:</strong> Direkomendasikan menggunakan merek laptop yang sama dengan tahun 2025.</li>
     </ul>
 
-    <h3>Kunci Jawaban 3: Penetapan KBKI</h3>
-    <p>Pengadaan laptop termasuk dalam jenis <strong>Pengadaan Barang</strong>.</p>
-    <p>Pengkodefikasian KBKI pada Pengadaan Laptop adalah:</p>
-    <table style="width: 100%; max-width: 800px;">
-      <tr>
-        <td style="background-color: #f9f9f9; width: 150px;"><strong>Seksi 4</strong></td>
-        <td>Produk logam, mesin dan perlengkapannya</td>
-      </tr>
-      <tr>
-        <td style="background-color: #f9f9f9;"><strong>Divisi 45</strong></td>
-        <td>Mesin perkantoran, akunting dan komputasi</td>
-      </tr>
-      <tr>
-        <td style="background-color: #f9f9f9;"><strong>Kelompok 452</strong></td>
-        <td>Mesin komputasi dan bagian serta perlengkapannya (Mesin pengolah data otomatis portabel < 10 kg)</td>
-      </tr>
-      <tr>
-        <td style="background-color: #f9f9f9;"><strong>Kelas 4522</strong></td>
-        <td>Mesin pengolah data otomatis portabel < 10 kg, seperti laptop, notebook dan sub-notebook</td>
-      </tr>
-      <tr>
-        <td style="background-color: #f9f9f9;"><strong>Subkelas 45221</strong></td>
-        <td class="ans-highlight">Mesin pengolah data otomatis portabel dengan berat tidak lebih dari 10 kg, seperti komputer laptop dan notebook</td>
-      </tr>
-    </table>
-
+    <h3>3. Penetapan Barang/Jasa (KBKI)</h3>
+    <p>Pengadaan laptop termasuk dalam jenis <strong>pengadaan barang</strong>.</p>
+    <div class="table-wrapper">
+      <table>
+        <tbody>
+          <tr>
+            <td class="section-header" style="width: 20%;">Seksi 4</td>
+            <td>Produk logam, mesin dan perlengkapannya</td>
+          </tr>
+          <tr>
+            <td class="section-header">Divisi 45</td>
+            <td>Mesin perkantoran, akunting dan komputasi</td>
+          </tr>
+          <tr>
+            <td class="section-header">Kelompok 452</td>
+            <td>Mesin komputasi dan bagian serta perlengkapannya: Mesin pengolah data otomatis portabel dengan berat tidak lebih dari 10 kg, seperti laptop, notebook dan sub-notebook</td>
+          </tr>
+          <tr>
+            <td class="section-header">Kelas 4522</td>
+            <td>Mesin pengolah data otomatis portabel dengan berat tidak lebih dari 10 kg, seperti laptop, notebook dan sub-notebook</td>
+          </tr>
+          <tr>
+            <td class="section-header">Subkelas 45221</td>
+            <td class="ans-bg">Mesin pengolah data otomatis portabel dengan berat tidak lebih dari 10 kg, seperti komputer laptop dan notebook</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+    <br><br>
   </div>
 
 </div>
 
 <script>
-  // Script Logika Tombol Submit
-  document.addEventListener('DOMContentLoaded', function() {
-    const btn = document.getElementById('submitBtn');
-    const txt = document.getElementById('userAnswer');
-    const msg = document.getElementById('feedbackMsg');
-    const ans = document.getElementById('answerKey');
+  function showAnswer() {
+    var txt = document.getElementById("userAnswer").value;
+    var btn = document.getElementById("submitBtn");
+    
+    if (txt.trim() === "") {
+      alert("Mohon isi jawaban Anda terlebih dahulu.");
+      return;
+    }
 
-    btn.addEventListener('click', function() {
-      if (txt.value.trim() === "") {
-        msg.innerText = "Mohon isi jawaban Anda terlebih dahulu sebelum Submit.";
-        msg.style.color = "red";
-        msg.style.display = "block";
-      } else {
-        // Jika sudah diisi
-        msg.innerText = "Jawaban berhasil disubmit! Silakan pelajari Kunci Jawaban di bawah ini.";
-        msg.style.color = "green";
-        msg.style.display = "block";
-        
-        // Kunci input
-        txt.disabled = true;
-        btn.disabled = true;
-        btn.innerText = "Terkirim";
-
-        // Tampilkan Kunci Jawaban
-        ans.style.display = "block";
-        ans.scrollIntoView({ behavior: 'smooth' });
-      }
-    });
-  });
+    // Tampilkan Kunci Jawaban
+    document.getElementById("feedback-area").style.display = "block";
+    
+    // Disable tombol
+    btn.disabled = true;
+    btn.innerHTML = "Terkirim";
+    document.getElementById("userAnswer").disabled = true;
+    
+    // Scroll ke bawah
+    document.getElementById("feedback-area").scrollIntoView({behavior: "smooth"});
+  }
 </script>
 
 </body>
